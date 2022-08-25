@@ -1,0 +1,52 @@
+{{ define "employee-list.tmpl" }}
+<html>
+    <head>
+        <style>
+            #custom {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #custom td, #custom th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #custom tr:nth-child(even){background-color: #f2f2f2;}
+
+            #custom tr:hover {background-color: #ddd;}
+
+            #custom th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+        <title>Employee List</title>
+    </head>
+    <body>
+        <table id="custom">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Sex</th>
+                <th>Nationality</th>
+            </thead>
+            <tbody>
+                {{ range .employeeList }}
+                <tr>
+                    <td>{{ .ID }}</td>
+                    <td>{{ .Name }}</td>
+                    <td>{{ .Sex }}</td>
+                    <td>{{ .Nationality }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </body>
+</html>
+
+{{ end }}
